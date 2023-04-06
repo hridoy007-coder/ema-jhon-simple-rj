@@ -6,7 +6,7 @@ import './Shop.css';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState([])
+    const [cart,  setCart] = useState([])
 
     useEffect(() => {
         fetch('products.json')
@@ -41,7 +41,7 @@ const Shop = () => {
         // if product does't exist in the cart , then set quantaty = 1
         // if exist update quantity by 1
         const exists = cart.find(pd => pd.id === product.id);
-        if (!exixt) {
+        if (!exists) {
             product.quantity = 1;
             newCart = [...cart, product];
         }
